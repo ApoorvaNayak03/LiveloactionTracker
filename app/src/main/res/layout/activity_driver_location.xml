@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bustracker"
+    tools:context=".driverlocation">
+
+
+    <TextView
+        android:id="@+id/t1"
+        android:layout_width="226dp"
+        android:layout_height="46dp"
+        android:fontFamily="serif"
+        android:text="Select Bus Number"
+        android:textAlignment="center"
+        android:textColor="@color/metalBlue"
+        android:textSize="24dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.486"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.143" />
+
+    <TextView
+        android:id="@+id/t2"
+        android:layout_width="109dp"
+        android:layout_height="27dp"
+        android:fontFamily="serif"
+        android:text="Enter URL"
+        android:textAlignment="center"
+        android:textColor="@color/metalBlue"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.42" />
+
+    <EditText
+        android:id="@+id/locurl"
+        android:layout_width="243dp"
+        android:layout_height="45dp"
+        android:backgroundTint="@color/metalBlue"
+        android:ems="10"
+        android:fontFamily="serif"
+        android:hint="Paste live location URL"
+        android:inputType="text"
+        android:textAlignment="center"
+        android:textColor="@color/metalBlue"
+        android:textColorHint="@color/gray"
+        android:textSize="20sp"
+
+        app:layout_constraintBottom_toTopOf="@+id/b"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/t2"
+        app:layout_constraintVertical_bias="0.344" />
+
+    <Button
+        android:id="@+id/b"
+        android:layout_width="213dp"
+        android:layout_height="56dp"
+        android:backgroundTint="#00275E"
+        android:fontFamily="serif"
+        android:text="Send Location"
+        android:textAlignment="center"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.631" />
+
+    <RadioGroup
+        android:id="@+id/radio"
+        android:layout_width="129dp"
+        android:layout_height="118dp"
+        app:layout_constraintBottom_toTopOf="@+id/t2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/t1">
+
+        <RadioButton
+            android:id="@+id/b1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:buttonTint="@color/metalBlue"
+
+            android:text="MNG 01"
+            android:textColor="@color/metalBlue" />
+
+        <RadioButton
+            android:id="@+id/b2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:buttonTint="@color/metalBlue"
+            android:text="MNG 04"
+            android:textColor="@color/metalBlue" />
+
+        <RadioButton
+            android:id="@+id/b3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:buttonTint="@color/metalBlue"
+            android:text="UDP 01"
+            android:textColor="@color/metalBlue" />
+    </RadioGroup>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

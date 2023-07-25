@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "393098194256",
+    "project_id": "livelocation-1399a",
+    "storage_bucket": "livelocation-1399a.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:393098194256:android:b3cca623339901459c1055",
+        "android_client_info": {
+          "package_name": "com.example.livelocationtracker"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "393098194256-cppqoq8ut522pj840vfd3ecr8i28j19q.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBoLssa2Obn2EV7aJtEG6G3t9LRHT6BEZY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "393098194256-cppqoq8ut522pj840vfd3ecr8i28j19q.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
