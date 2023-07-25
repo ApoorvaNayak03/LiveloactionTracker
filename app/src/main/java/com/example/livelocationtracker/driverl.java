@@ -60,6 +60,7 @@ import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -69,6 +70,7 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 
 public class driverl extends AppCompatActivity {
 
@@ -76,7 +78,15 @@ public class driverl extends AppCompatActivity {
     EditText em, pass;
     FirebaseAuth mAuth;
 
-    @SuppressLint("MissingInflatedId")
+    public void onStart() {
+        super.onStart();
+        FirebaseUser currentUser = mAuth.getCurrentUser();
+        if(currentUser != null){
+            Intent intent =new Intent(getApplicationContext(), MainActivity.class);
+            startActivity(intent);
+            finish();
+        }
+    }
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -92,8 +102,8 @@ public class driverl extends AppCompatActivity {
             public void onClick(View v) {
                 String email;
                 String Password;
-                Intent intent = new Intent(driverl.this, driver_location.class);
-                startActivity(intent);
+                //Intent intent = new Intent(driverl.this, driver_location.class);
+                //startActivity(intent);
                 email = em.getText().toString();
                 Password = pass.getText().toString();
                 if (TextUtils.isEmpty(email)) {
@@ -105,24 +115,19 @@ public class driverl extends AppCompatActivity {
                     return;
                 }
 
-                // Use Firebase Authentication to attempt login
+
                 mAuth.signInWithEmailAndPassword(email, Password)
                         .addOnCompleteListener(driverl.this, new OnCompleteListener<AuthResult>() {
                             @Override
                             public void onComplete(Task<AuthResult> task) {
                                 if (task.isSuccessful()) {
-                                    // Login successful
                                     Toast.makeText(driverl.this, "Login Successful", Toast.LENGTH_SHORT).show();
-
-                                    // Start the driverlocation activity
-
-                                    // Intent intent = new Intent(driverl.this, driverlocation.class);
-                                    //startActivity(intent);
-                                    // Finish the current activity (optional)
+                                    Intent intent = new Intent(driverl.this, driver_location.class);
+                                    startActivity(intent);
                                     finish();
-                                } else {
-                                    // Login failed
-                                    Toast.makeText(driverl.this, "Login Failed. Please check your credentials.", Toast.LENGTH_SHORT).show();
+                                }
+                                else {
+                                    Toast.makeText(driverl.this, "Authentication failed.", Toast.LENGTH_SHORT).show();
                                 }
                             }
                         });
